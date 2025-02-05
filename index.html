@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OBJ3D - Modelos 3D de Alta Qualidade para Móveis | Studio Hex 3D</title>
+  <meta name="description"
+    content="Transforme seu catálogo de móveis com modelos 3D de alta qualidade. Oferecemos modelagem 3D profissional para mobiliário, garantindo apresentações realistas e impactantes.">
+  <meta name="keywords" content="modelagem 3D, móveis 3D, catálogo digital, visualização 3D, design de móveis">
+  <meta name="robots" content="index, follow">
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://www.objeto3d.netlify.app" />
+
+  <!-- Open Graph Tags -->
+  <meta property="og:title" content="OBJ3D - Modelos 3D de Alta Qualidade para Móveis">
+  <meta property="og:description"
+    content="Transforme seu catálogo de móveis com modelos 3D de alta qualidade. Modelagem profissional para mobiliário.">
+  <meta property="og:image" content="https://www.objeto3d.netlify.app/image/og-image.jpg">
+  <meta property="og:url" content="https://www.objeto3d.netlify.app">
+  <meta property="og:type" content="website">
+
+  <!-- Twitter Card Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="OBJ3D - Modelos 3D de Alta Qualidade para Móveis">
+  <meta name="twitter:description" content="Transforme seu catálogo de móveis com modelos 3D de alta qualidade.">
+  <meta name="twitter:image" content="https://www.objeto3d.netlify.app/image/twitter-card.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="image/Logo.svg">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Schema.org markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "OBJ3D - Studio Hex 3D",
+    "description": "Serviço de modelagem 3D para móveis e mobiliário",
+    "image": "https://www.objeto3d.netlify.app/image/logo.png",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "BR"
+    },
+    "offers": {
+      "@type": "Offer",
+      "description": "Serviços de modelagem 3D para móveis"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.8",
+      "reviewCount": "147"
+    }
+  }
+  </script>
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=JF-M3D"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'JF-M3D');
+  </script>
+</head>
+
+<body>
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <img src="image/Logo.svg" alt="Logo M3D" class="hero-logo">
+        <h1>Transforme Seu Catálogo com Modelos 3D Impressionantes!</h1>
+        <div class="hero-text">
+          <p>Destaque-se da concorrência e impressione seus clientes com catálogos que ganham vida.</p>
+          <p>Nossos serviços de modelagem 3D trazem uma nova dimensão aos seus produtos, permitindo que seus clientes
+            visualizem cada detalhe com clareza.</p>
+        </div>
+
+        <a href="#" class="cta-button">Quero meu objeto em 3D</a>
+      </div>
+      <div class="hero-image">
+        <img src="image/hero-model-3d.webp" alt="Exemplo de modelagem 3D de móveis de alta qualidade" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <section class="benefits">
+    <div class="container">
+      <p class="benefits-text">Aumente seu faturamento e experiência de seus clientes oferecendo modelos fiéis e de alta
+        qualidade em suas lojas</p>
+    </div>
+  </section>
+
+  <section class="video">
+    <div class="container">
+      <div class="video-container">
+        <div class="play-button" id="playButton"></div>
+        <video id="myVideo" poster="image/video-thumb.png">
+          <source src="video/teste.mp4" type="video/mp4">
+          Seu navegador não suporta vídeos HTML5.
+        </video>
+      </div>
+    </div>
+  </section>
+  <section class="gallery">
+    <div class="gallery-container">
+      <div class="gallery-track">
+        <!-- Duplicamos as imagens para criar um efeito infinito -->
+        <div class="gallery-item">
+          <img src="image/gallery-teste.jpg" alt="Modelo 3D de móvel - exemplo 1" loading="lazy">
+        </div>
+        <div class="gallery-item">
+          <img src="image/gallery-teste-2.jpg" alt="Modelo 3D de móvel - exemplo 2" loading="lazy">
+        </div>
+        <div class="gallery-item">
+          <img src="image/gallery-teste-3.jpg" alt="Modelo 3D de móvel - exemplo 3" loading="lazy">
+        </div>
+        <div class="gallery-item">
+          <img src="image/gallery-test-4.png" alt="Modelo 3D de móvel - exemplo 4" loading="lazy">
+        </div>
+        <div class="gallery-item">
+          <img src="image/gallery-test-5.jpg" alt="Modelo 3D de móvel - exemplo 5" loading="lazy">
+        </div>
+        <div class="gallery-item">
+          <img src="image/gallery-test-6.jpg" alt="Modelo 3D de móvel - exemplo 6" loading="lazy">
+        </div>
+        <!-- Duplicação para efeito infinito -->
+        <div class="gallery-item">
+          <img src="image/gallery-teste-1.jpg" alt="Modelo 3D de móvel - exemplo 1" loading="lazy">
+        </div>
+        <div class="gallery-item">
+          <img src="image/gallery-teste-2.jpg" alt="Modelo 3D de móvel - exemplo 2" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pop-up para imagens -->
+  <div class="gallery-popup" id="imagePopup">
+    <div class="popup-content">
+      <button class="popup-close" aria-label="Fechar">×</button>
+      <img src="" alt="" id="popupImage">
+    </div>
+  </div>
+
+  <section class="steps">
+    <div class="container">
+      <h2>Conheça as 03 etapas do obj3D</h2>
+      <div class="steps-grid">
+        <div class="step">
+          <img src="image/step-1.webp" alt="Processo de envio de referências para modelagem 3D" loading="lazy">
+          <h3>Etapa 01</h3>
+          <h4>Envio de referencias</h4>
+          <p>Nessa etapa você enviará os arquivos do seu modelo específico, seja um croqui, sketch, jpeg, imagens para
+            iniciar o processo de modelagem.</p>
+        </div>
+        <div class="step">
+          <img src="image/step-2.webp" alt="Etapa 2">
+          <h3>Etapa 02</h3>
+          <h4>Início da modelagem</h4>
+          <p>Aqui, vai iniciar o processo de modelagem seguindo todas os arquivos de referências enviados. Toda a
+            modelagem é desenvolvida no programa 3ds max.</p>
+        </div>
+        <div class="step">
+          <img src="image/step-3.webp" alt="Etapa 3">
+          <h3>Etapa 03</h3>
+          <h4>Entrega</h4>
+          <p>Toda a entrega será enviado por e-mail em um arquivo zipado contendo o modelo com materiais e texturas,
+            caso o cliente solicite
+            imagens, elas serão produzidas no formato 4000x4000 pixels.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonials">
+    <div class="container">
+      <h2>Depoimentos de clientes</h2>
+      <div class="testimonials-grid">
+        <div class="testimonial">
+          <img src="image/people_01.webp" alt="Foto do cliente João da Silva" loading="lazy">
+          <p>"O modelo 3D foi entregue rapidamente e com alta qualidade. Recomendo a todos que buscam uma solução rápida
+            e eficiente para apresentar seus produtos."</p>
+          <h4>Luiz Henrique</h4>
+        </div>
+        <div class="testimonial">
+          <img src="image/peolple 02.webp" alt="Depoimento 2">
+          <p>"O modelo 3D foi entregue rapidamente e com alta qualidade. Recomendo a todos que buscam uma solução rápida
+            e eficiente para apresentar seus produtos."</p>
+          <h4>João da Silva</h4>
+        </div>
+        <div class="testimonial">
+          <img src="image/people_03.webp" alt="Depoimento 3">
+          <p>"O modelo 3D foi entregue rapidamente e com alta qualidade. Recomendo a todos que buscam uma solução rápida
+            e eficiente para apresentar seus produtos."</p>
+          <h4>Leticia Vilela</h4>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <section class="faq">
+    <div class="container">
+      <h2>Dúvidas frequentes</h2>
+      <div class="faq-list">
+        <details>
+          <summary>1. Como funciona a garantia?</summary>
+          <p>Todos os modelos são garantidos por 30 dias, caso ocorra algum problema, você pode solicitar uma nova
+            versão do modelo.</p>
+        </details>
+        <details>
+          <summary>2. Quais são as formas de pagamento?</summary>
+          <p>Segurança e qualidade são nossas prioridades. Aceitamos pagamentos via PIX, bitcoin e cartão de credito.
+          </p>
+        </details>
+        <details>
+          <summary>3. Como funciona o prazo de entrega?</summary>
+          <p>O prazo de entrega é de 10 dias úteis para entrega do modelo 3D, dependendo da complexidade do modelo e da
+            quantidade de arquivos.</p>
+        </details>
+      </div>
+    </div>
+
+    <section class="cta">
+      <div class="hero-content">
+
+        <a href="#" class="cta-button">Quero meu objeto em 3D</a>
+      </div>
+    </section>
+  </section>
+
+  <footer>
+    <div class="container">
+      <img src="image/Logo.svg" alt="M3D Logo">
+      <p class="copyright">© Copyright 2025 Obj3D - Modelos De Qualidade.<br>Todos os direitos reservados</p>
+      <p class="copyright">Desenvolvido por <a href="https://www.instagram.com/studiohex3d/">Studio Hex 3D</a></p>
+    </div>
+    <div class="aviso-legal">
+      <p>ESTE SITE NÃO É do FACEBOOK: Este site não faz parte do site do Facebook ou do Facebook Inc. Além disso, este
+        site NÃO é endossado pelo Facebook de nenhuma maneira. FACEBOOK é uma marca comercial independente da FACEBOOK,
+        Inc.</p>
+    </div>
+  </footer>
+
+  <script>
+    const video = document.getElementById('myVideo');
+    const playButton = document.getElementById('playButton');
+
+    playButton.addEventListener('click', function () {
+      if (video.paused) {
+        video.play();
+        playButton.style.display = 'none';
+      } else {
+        video.pause();
+        playButton.style.display = 'block';
+      }
+    });
+
+    video.addEventListener('click', function () {
+      if (video.paused) {
+        video.play();
+        playButton.style.display = 'none';
+      } else {
+        video.pause();
+        playButton.style.display = 'block';
+      }
+    });
+
+    video.addEventListener('ended', function () {
+      playButton.style.display = 'block';
+    });
+  </script>
+
+  <a href="https://wa.me/5533999299216" class="whatsapp-button" target="_blank" rel="noopener noreferrer">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+      <path
+        d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824zm-3.423-14.416c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm.029 18.88c-1.161 0-2.305-.292-3.318-.844l-3.677.964.984-3.595c-.607-1.052-.927-2.246-.926-3.468.001-3.825 3.113-6.937 6.937-6.937 1.856.001 3.598.723 4.907 2.034 1.31 1.311 2.031 3.054 2.03 4.908-.001 3.825-3.113 6.938-6.937 6.938z" />
+    </svg>
+    <span>Fale conosco</span>
+  </a>
+
+  <!-- Proteção contra inspeção -->
+  <script>
+    // Desabilita o clique direito
+    document.addEventListener('contextmenu', function (e) {
+      e.preventDefault();
+    });
+
+    // Desabilita algumas teclas de atalho comuns
+    document.addEventListener('keydown', function (e) {
+      // Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+Shift+C, Ctrl+U, F12
+      if (
+        (e.ctrlKey && e.shiftKey && (e.keyCode === 73 || e.keyCode === 74 || e.keyCode === 67)) ||
+        (e.ctrlKey && e.keyCode === 85) ||
+        e.keyCode === 123
+      ) {
+        e.preventDefault();
+      }
+    });
+
+    // Desabilita DevTools através de outras verificações
+    setInterval(function () {
+      const devtools = /./;
+      devtools.toString = function () {
+        this.opened = true;
+      }
+      console.log('%c', devtools);
+    }, 1000);
+
+    // Mensagem de aviso no console
+    console.log(
+      '%cAtenção!',
+      'color: red; font-size: 30px; font-weight: bold;'
+    );
+    console.log(
+      '%cEste site é protegido contra cópia e inspeção de código.',
+      'font-size: 16px;'
+    );
+  </script>
+
+  <script src="scripts.js"></script>
+
+  <!-- Adicione antes do fechamento do </body> -->
+  <div class="form-popup" id="ctaForm">
+    <div class="form-popup-content">
+      <button class="form-close" aria-label="Fechar">×</button>
+      <h2>Solicite seu orçamento</h2>
+      <form id="contactForm">
+        <div class="form-group">
+          <input type="text" id="name" name="name" required>
+          <label for="name">Nome completo</label>
+        </div>
+
+        <div class="form-group">
+          <input type="email" id="email" name="email" required>
+          <label for="email">E-mail</label>
+        </div>
+
+        <div class="form-group">
+          <input type="tel" id="phone" name="phone" required>
+          <label for="phone">Telefone</label>
+        </div>
+
+        <div class="form-group">
+          <textarea id="message" name="message" rows="4" required></textarea>
+          <label for="message">Descreva seu projeto</label>
+        </div>
+
+        <button type="submit" class="submit-button">Enviar solicitação</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Adicione antes do fechamento do </body> -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+</body>
+
+</html>
