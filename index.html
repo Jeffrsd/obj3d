@@ -65,13 +65,20 @@
     gtag('js', new Date());
     gtag('config', 'G-SQ5EZ9NZVZ');
   </script>
+
+  <!-- Adicionar meta tag de idioma alternativo caso tenha versão em inglês -->
+  <link rel="alternate" hreflang="en" href="https://www.objeto3d.netlify.app/en/" />
+
+  <!-- Adicionar preconnect para recursos externos -->
+  <link rel="preconnect" href="https://www.googletagmanager.com">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
 </head>
 
 <body>
   <section class="hero">
     <div class="container">
       <div class="hero-content">
-        <img src="image/Logo.svg" alt="Logo M3D" class="hero-logo">
+        <img src="image/Logo.svg" alt="Logo M3D" class="hero-logo" width="150" height="50">
         <h1>Transforme Seu Catálogo com Modelos 3D Impressionantes!</h1>
         <div class="hero-text">
           <p>Destaque-se da concorrência e impressione seus clientes com catálogos que ganham vida.</p>
@@ -82,7 +89,9 @@
         <a href="#" class="cta-button">Quero meu objeto em 3D</a>
       </div>
       <div class="hero-image">
-        <img src="image/hero-model-3d.webp" alt="Exemplo de modelagem 3D de móveis de alta qualidade" loading="lazy">
+        <img src="image/hero-model-3d.webp" srcset="image/hero-model-3d-small.webp 400w,
+                     image/hero-model-3d.webp 800w" sizes="(max-width: 600px) 400px, 800px"
+          alt="Exemplo de modelagem 3D de móveis de alta qualidade" loading="lazy">
       </div>
     </div>
   </section>
@@ -98,7 +107,7 @@
     <div class="container">
       <div class="video-container">
         <div class="play-button" id="playButton"></div>
-        <video id="myVideo" poster="image/video-thumb.png">
+        <video id="myVideo" poster="image/video-thumb.png" preload="metadata">
           <source src="video/teste.mp4" type="video/mp4">
           Seu navegador não suporta vídeos HTML5.
         </video>
@@ -247,32 +256,37 @@
   </footer>
 
   <script>
-    const video = document.getElementById('myVideo');
-    const playButton = document.getElementById('playButton');
+    // Otimizar manipulação do DOM
+    const videoPlayer = {
+      video: document.getElementById('myVideo'),
+      playButton: document.getElementById('playButton'),
 
-    playButton.addEventListener('click', function () {
-      if (video.paused) {
-        video.play();
-        playButton.style.display = 'none';
-      } else {
-        video.pause();
-        playButton.style.display = 'block';
+      init() {
+        this.addEventListeners();
+      },
+
+      addEventListeners() {
+        this.playButton.addEventListener('click', () => this.togglePlay());
+        this.video.addEventListener('click', () => this.togglePlay());
+        this.video.addEventListener('ended', () => this.showPlayButton());
+      },
+
+      togglePlay() {
+        if (this.video.paused) {
+          this.video.play();
+          this.playButton.style.display = 'none';
+        } else {
+          this.video.pause();
+          this.playButton.style.display = 'block';
+        }
+      },
+
+      showPlayButton() {
+        this.playButton.style.display = 'block';
       }
-    });
+    };
 
-    video.addEventListener('click', function () {
-      if (video.paused) {
-        video.play();
-        playButton.style.display = 'none';
-      } else {
-        video.pause();
-        playButton.style.display = 'block';
-      }
-    });
-
-    video.addEventListener('ended', function () {
-      playButton.style.display = 'block';
-    });
+    videoPlayer.init();
   </script>
 
   <a href="https://wa.me/5533999299216" class="whatsapp-button" target="_blank" rel="noopener noreferrer">
@@ -285,41 +299,46 @@
 
   <!-- Proteção contra inspeção -->
   <script>
-    // Desabilita o clique direito
-    document.addEventListener('contextmenu', function (e) {
-      e.preventDefault();
-    });
+    // Otimizar verificação de DevTools
+    const securityModule = {
+      checkInterval: null,
 
-    // Desabilita algumas teclas de atalho comuns
-    document.addEventListener('keydown', function (e) {
-      // Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+Shift+C, Ctrl+U, F12
-      if (
-        (e.ctrlKey && e.shiftKey && (e.keyCode === 73 || e.keyCode === 74 || e.keyCode === 67)) ||
-        (e.ctrlKey && e.keyCode === 85) ||
-        e.keyCode === 123
-      ) {
-        e.preventDefault();
+      init() {
+        this.disableRightClick();
+        this.disableShortcuts();
+        this.startDevToolsCheck();
+      },
+
+      disableRightClick() {
+        document.addEventListener('contextmenu', e => e.preventDefault());
+      },
+
+      disableShortcuts() {
+        document.addEventListener('keydown', e => {
+          if (this.isDevToolsShortcut(e)) {
+            e.preventDefault();
+          }
+        });
+      },
+
+      isDevToolsShortcut(e) {
+        return (e.ctrlKey && e.shiftKey && [73, 74, 67].includes(e.keyCode)) ||
+          (e.ctrlKey && e.keyCode === 85) ||
+          e.keyCode === 123;
+      },
+
+      startDevToolsCheck() {
+        this.checkInterval = setInterval(() => {
+          const devtools = /./;
+          devtools.toString = function () {
+            this.opened = true;
+          }
+          console.log('%c', devtools);
+        }, 1000);
       }
-    });
+    };
 
-    // Desabilita DevTools através de outras verificações
-    setInterval(function () {
-      const devtools = /./;
-      devtools.toString = function () {
-        this.opened = true;
-      }
-      console.log('%c', devtools);
-    }, 1000);
-
-    // Mensagem de aviso no console
-    console.log(
-      '%cAtenção!',
-      'color: red; font-size: 30px; font-weight: bold;'
-    );
-    console.log(
-      '%cEste site é protegido contra cópia e inspeção de código.',
-      'font-size: 16px;'
-    );
+    securityModule.init();
   </script>
 
   <script src="scripts.js"></script>
@@ -331,17 +350,17 @@
       <h2>Solicite seu orçamento</h2>
       <form id="contactForm">
         <div class="form-group">
-          <input type="text" id="name" name="name" required>
+          <input type="text" id="name" name="name" required autocomplete="name">
           <label for="name">Nome completo</label>
         </div>
 
         <div class="form-group">
-          <input type="email" id="email" name="email" required>
+          <input type="email" id="email" name="email" required autocomplete="email">
           <label for="email">E-mail</label>
         </div>
 
         <div class="form-group">
-          <input type="tel" id="phone" name="phone" required>
+          <input type="tel" id="phone" name="phone" required autocomplete="tel">
           <label for="phone">Telefone</label>
         </div>
 
